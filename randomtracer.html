@@ -42,21 +42,11 @@
 	stats = new Stats();
 	document.body.appendChild( stats.dom );
 
-var loader = new THREE.TextureLoader();
+	var loader = new THREE.TextureLoader();
 
-//allow cross origin loading
-loader.crossOrigin = '';
+	//allow cross origin loading
+	loader.crossOrigin = '';
 
-var mapOverlay = loader.load('https://i.imgur.com/3tU4Vig.jpg');
-
-var geometry = new THREE.BoxGeometry(200, 200, 200);
-var material = new THREE.MeshPhongMaterial( { color: 0xffffff, map: mapOverlay, needsUpdate: true } );
-var materials = [material, material, material, material, material, material];
-var meshFaceMaterial = new THREE.MeshFaceMaterial( materials );
-
-var cube = new THREE.Mesh(geometry, material);
-scene.add(cube);
-	
 	// Position Line Tracer
 	var amr_pos = new THREE.Vector3( 0, 0, 25 ); // Init to height 25 (simple robot moves only in X,Y plane)
 	var tracer_material = new THREE.LineBasicMaterial({
@@ -80,7 +70,17 @@ scene.add(cube);
 						pos_update.x.toString() + ':' + pos_update.y.toString()  + ':' + pos_update.z.toString());
 		}
 	}
+	
+	function addImg(src) {
+		var mapOverlay = loader.load(src);
 
+		var geometry = new THREE.PlaneBufferGeometry( 5, 20, 32 );
+		var material = new THREE.MeshPhongMaterial( { color: 0xffffff, map: mapOverlay, needsUpdate: true } );
+
+		var plane = new THREE.Mesh(geometry, material);
+		scene.add(plane);
+	}
+	
 	window.addEventListener( 'resize', onWindowResize, false );
 
 	function onWindowResize() {
@@ -89,7 +89,7 @@ scene.add(cube);
 
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	}
-
+	addImg('https://i.imgur.com/3tU4Vig.jpg');
 	animate();
 
 	function animate() {
