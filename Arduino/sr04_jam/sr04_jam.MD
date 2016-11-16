@@ -18,6 +18,7 @@ Time to revisit my first Digital Logic Design project, creating an astable timer
 
 ### Designing the Hardware circuit
 Our constraints come from the datasheet of the sonar sensor. The trigger signal is a 10uS pulse which sets off 8 pulses at 40 kHz. Each period is 2.5e-5 seconds. The waiting period should be 0.2 milliseconds as it transmits. To be safe our on time will be 20uS and our off time will be 230 uS. 
+
 Design Parameter | Value
 ---------------- | -----
 Frequency        | 4 kHz
