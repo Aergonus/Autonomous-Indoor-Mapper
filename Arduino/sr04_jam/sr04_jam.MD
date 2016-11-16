@@ -10,9 +10,9 @@ Ultrasonic sensors are a non-contact distance measuring device that operate on t
     digitalWrite(_triggerPin, LOW);   // Set trigger pin back to low.
 ```
 ### EEureka!
-Notice that the trigger is merely a clock signal!
-Electrical engineering knowledge *triggered*!
-Jamming can be done in **HARDWARE**.
+* Notice that the trigger is merely a clock signal!
+* Electrical engineering knowledge *triggered*!
+* Jamming can be done in **HARDWARE**.
 
 Time to revisit my first Digital Logic Design project, creating an astable timer. A good reference detailing the 55 timer and astable circuits can be found [here](http://electronicsclub.info/555astable.htm)
 
