@@ -1,4 +1,4 @@
-# Ultrasonic Jamming 
+# Ultrasonic Jamming (in hardware)
 Ultrasonic sensors are a non-contact distance measuring device that operate on the same principal as radar or sonar, namely time of flight. Polaroid cameras employed this sensor to provide an approximate distance gauge for photographer. The cheapest commercial market sonar is the HC-SR04 sensor which sends out a modulated signal at 40 kHz. The NewPing Library for Arduino provides the easiest interface to use these sensors. The basic operation is explained below
 
 ###Software Loop for Jamming
